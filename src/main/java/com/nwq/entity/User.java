@@ -1,5 +1,10 @@
 package com.nwq.entity;
 
+/**
+ * @auth nwq
+ * @date 2020/6/21
+ * @Description
+ */
 import java.io.Serializable;
 
 public class User implements Serializable {
