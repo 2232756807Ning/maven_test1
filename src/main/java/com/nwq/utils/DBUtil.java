@@ -1,7 +1,6 @@
 package com.nwq.utils;
 
 import com.alibaba.druid.pool.DruidDataSource;
-import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.io.IOException;
 import java.io.InputStream;
