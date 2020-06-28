@@ -6,6 +6,7 @@ package com.nwq.entity;
  * @Description
  */
 import java.io.Serializable;
+import java.util.Date;
 
 public class User implements Serializable {
 
@@ -20,7 +21,7 @@ public class User implements Serializable {
   private String phone;
   private Integer sex;
   private String description;
-  private String registerTime;
+  private Date registerTime;
   private String loginTime;
   private String pic;
   private Integer look;
@@ -115,11 +116,11 @@ public class User implements Serializable {
     this.description = description;
   }
 
-  public String getRegisterTime() {
+  public Date getRegisterTime() {
     return registerTime;
   }
 
-  public void setRegisterTime(String registerTime) {
+  public void setRegisterTime(Date registerTime) {
     this.registerTime = registerTime;
   }
 
