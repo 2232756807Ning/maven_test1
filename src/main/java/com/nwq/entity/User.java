@@ -10,6 +10,10 @@ import java.util.Date;
 
 public class User implements Serializable {
 
+  //冗余字段（数据库不存在的字段）
+  private String deptName;
+  private String sexName;
+
   private Integer id;
   private String username;
   private String password;
@@ -162,5 +166,21 @@ public class User implements Serializable {
 
   public void setDeptId(Integer deptId) {
     this.deptId = deptId;
+  }
+
+  public String getDeptName() {
+    return deptName;
+  }
+
+  public void setDeptName(String deptName) {
+    this.deptName = deptName;
+  }
+
+  public String getSexName() {
+    return sexName;
+  }
+
+  public void setSexName(String sexName) {
+    this.sexName = sexName;
   }
 }

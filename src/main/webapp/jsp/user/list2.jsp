@@ -34,7 +34,6 @@
         <tr>
             <td>序号</td>
             <td>id</td>
-            <td>部门名称</td>
             <td>用户名</td>
             <td>真实姓名</td>
             <td>年龄</td>
@@ -43,21 +42,19 @@
             <td>操作</td>
         </tr>
 
-        <c:forEach var="user" items="${page.data}" varStatus="status">
+        <c:forEach var="user" items="${list}" varStatus="status">
             <tr>
                 <td>${status.index+1}</td>
                 <td>${user.id}</td>
-                <td>${user.deptName}</td>
                 <td>${user.username}</td>
                 <td>${user.realName}</td>
                 <td>${user.age}</td>
                 <td>
-                    <%--<c:choose>--%>
-                        <%--<c:when test="${user.sex==1}">男</c:when>--%>
-                        <%--<c:when test="${user.sex==0}">女</c:when>--%>
-                        <%--<c:otherwise>其他</c:otherwise>--%>
-                    <%--</c:choose>--%>
-                    ${user.sexName}
+                    <c:choose>
+                        <c:when test="${user.sex==1}">男</c:when>
+                        <c:when test="${user.sex==0}">女</c:when>
+                        <c:otherwise>其他</c:otherwise>
+                    </c:choose>
 
                 </td>
 
@@ -83,8 +80,8 @@
     总页数：${page.pageCount}
     总记录数：${page.count}
 
-    <a href="/user/list?page=${page.pageCurrent-1>0?page.pageCurrent-1:1}&username=${username}">上一页</a>
-    <a href="/user/list?page=${page.pageCurrent+1>=page.pageCount?page.pageCount:page.pageCurrent+1}&username=${username}">下一页</a>
+    <a href="/user/list?page=${page.pageCurrent-1>0?page.pageCurrent-1:1}">上一页</a>
+    <a href="/user/list?page=${page.pageCurrent+1>=page.pageCount?page.pageCount:page.pageCurrent+1}">下一页</a>
 
 </div>
 </body>

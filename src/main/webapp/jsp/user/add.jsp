@@ -27,7 +27,6 @@
         });
 
     });
-
     function checkUserName() {
         var name = $("#username").val();
         $.ajax({
