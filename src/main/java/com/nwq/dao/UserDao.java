@@ -104,7 +104,7 @@ public class UserDao extends BaseDao {
     public User update(String name, Integer id) {
         String sql = "update user set username=?  where id= ?";
         try {
-            return template.queryForObject(sql, new BeanPropertyRowMapper<>(User.class),name, id);
+            return template.queryForObject(sql, new BeanPropertyRowMapper<>(User.class), name, id);
         } catch (DataAccessException e) {
             return null;
         }
@@ -115,5 +115,23 @@ public class UserDao extends BaseDao {
         template.update(sql, id);
     }
 
+    public User checkLogin(User user) {
+        //此系统账号必须唯一
+        String sql = "select * from user where username=? and password=?";
+        try {
+            return template.queryForObject(sql, new BeanPropertyRowMapper<>(User.class), user.getUsername(), user.getPassword());
+        } catch (DataAccessException e) {
+            return null;
+        }
+    }
+
+    public void updatePs(String username, String newPs) {
+        String sql = "update user set password=? where username=? ";
+        template.update(sql, newPs, username);
+    }
+    public void updatePic(Integer id, String pic) {
+        String sql = "update user set pic=? where id=? ";
+        template.update(sql, pic, id);
+    }
 
 }

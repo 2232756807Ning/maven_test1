@@ -6,6 +6,8 @@ import com.nwq.entity.User;
 
 import java.util.Date;
 import java.util.List;
+
+import com.nwq.utils.MdUtil;
 import org.springframework.util.StringUtils;
 
 /**
@@ -52,6 +54,10 @@ public class UserService {
 //        return userDao.getCount();
 //    }
     public void addUser(User user) {
+//        user.setId(null);
+//        user.setPassword(MdUtil.md5(user.getPassword()));
+//        user.setRegisterTime(new Date());
+//        userDao.addUser(user);
         user.setId(null);
         user.setRegisterTime(new Date());
 //        user.setDeptId(null);
@@ -77,6 +83,8 @@ public class UserService {
         return userDao.getUserById(id);
     }
 
+
+
     public void update(User user) {
         user.setRegisterTime(new Date());
         userDao.update(user.getUsername(),user.getId());
@@ -85,6 +93,36 @@ public class UserService {
 
     public void delete(Integer id) {
         userDao.delete(id);
+    }
+
+    /**
+     * @Author nwq
+     * @Version  1.0
+     * @Description 验证账号和密码
+     * @Date 2020/6/29 18:07
+     * @Param [name, password]
+     * @Return com.nwq.entity.User
+     */
+    public User checkLogin(String name, String password) {
+        User user = new User();
+        user.setUsername(name);
+        user.setPassword(MdUtil.md5(password));
+        return userDao.checkLogin(user);
+    }
+
+    /**
+     * @Author nwq
+     * @Version  1.0
+     * @Description 根据账号修改密码
+     * @Date 2020/6/29 18:06
+     * @Param [username, newPs]
+     * @Return void
+     */
+    public void updatePs(String username, String newPs) {
+        userDao.updatePs(username, newPs);
+    }
+    public void updatePic(Integer id, String pic) {
+        userDao.updatePic(id, pic);
     }
 
 }
