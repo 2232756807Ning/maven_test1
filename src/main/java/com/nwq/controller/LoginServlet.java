@@ -24,7 +24,7 @@ public class LoginServlet extends BaseServlet {
 
     private UserService userService = new UserService();
 
-    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void Login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
 
         String name = request.getParameter("username");
@@ -53,7 +53,7 @@ public class LoginServlet extends BaseServlet {
                 c.setPath("/");
                 response.addCookie(c);
             }
-
+            request.getRequestDispatcher("/jsp/common/main.jsp").forward(request, response);
         }
     }
 

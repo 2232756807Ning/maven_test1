@@ -14,4 +14,5 @@ public class SysConstant {
     public static final String FILE_PREFIX = "D:\\upload\\";
 
 
+    public static final String SESSION_LOGIN_USER ="sesionLoginUser" ;
 }
