@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="maven_test:war exploded">
-    <output-path>$PROJECT_DIR$/target/maven_test</output-path>
+    <output-path>$PROJECT_DIR$/out/artifacts/maven_test_war_exploded</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -15,8 +15,6 @@
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.46" />
           <element id="library" level="project" name="Maven: com.alibaba:druid:1.1.10" />
           <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-catalina:9.0.35" />
-          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-servlet-api:9.0.35" />
-          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-jsp-api:9.0.35" />
           <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-el-api:9.0.35" />
           <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-juli:9.0.35" />
           <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-annotations-api:9.0.35" />
@@ -26,8 +24,6 @@
           <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-util-scan:9.0.35" />
           <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-jaspic-api:9.0.35" />
           <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-api:9.0.35" />
-          <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.5" />
-          <element id="library" level="project" name="Maven: javax.servlet.jsp:jsp-api:2.1" />
           <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.11.0" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.11.0" />
@@ -44,10 +40,15 @@
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpclient:4.5.8" />
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpcore:4.4.11" />
           <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.11" />
+          <element id="library" level="project" name="Maven: cn.hutool:hutool-all:4.1.14" />
+          <element id="library" level="project" name="Maven: org.apache.poi:poi:3.15" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-collections4:4.1" />
+          <element id="library" level="project" name="Maven: org.apache.poi:poi-ooxml:3.15" />
+          <element id="library" level="project" name="Maven: org.apache.poi:poi-ooxml-schemas:3.15" />
+          <element id="library" level="project" name="Maven: org.apache.xmlbeans:xmlbeans:2.6.0" />
+          <element id="library" level="project" name="Maven: stax:stax-api:1.0.1" />
+          <element id="library" level="project" name="Maven: com.github.virtuald:curvesapi:1.04" />
         </element>
-      </element>
-      <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/maven_test/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="maven_test/web/Web" />
     </root>

@@ -23,11 +23,14 @@
     <input type="checkbox" value="1" name="remember">记住我<br><br>
     <input type="submit" value="登录"><br><br>
     <a href="/jsp/login/forget.jsp">忘记密码</a><br><br>
-    <a href="/weChat/login"><img src="pic/2.png"></a>
-    <a href="/qq/login">QQ登录</a>
+
 
 </form>
 
+<a href="/weChat/login">微信登录
+    <%--<img src="pic/2.png">--%>
+</a>
+<a href="/qq/login">QQ登录</a>
 <%--<a href="/login">登录</a>--%>
 
 

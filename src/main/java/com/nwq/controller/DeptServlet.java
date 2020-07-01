@@ -22,8 +22,8 @@ public class DeptServlet extends BaseServlet{
 
     private DeptService deptService = new DeptService();
 
-    public void listAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Dept> list = deptService.listAll();
-        response.getWriter().write(JSON.toJSONString(list));
+    public void list(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String id=request.getParameter("id");
+        String name=request.getParameter("name");
     }
 }

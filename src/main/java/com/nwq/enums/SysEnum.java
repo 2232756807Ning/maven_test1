@@ -26,4 +26,6 @@ public enum SysEnum {
     public void setValue(String value) {
         this.value = value;
     }
+
+
 }

@@ -15,7 +15,11 @@
 <%@include file="../common/left.jsp" %>
 <div id="right">
 
-    <a href="/jsp/user/add.jsp" class="btn btn-success">添加</a><br><br>
+    <a href="/jsp/user/add.jsp" class="btn btn-success">添加</a>
+    <%--<a href="/poi/exportUser?username=${username}" class="btn btn-primary">导出Excel</a>--%>
+    <a href="/poi/exportUser" class="btn btn-primary">导出Excel</a>
+
+    <br><br>
 
 
     <form action="/user/list" method="post">

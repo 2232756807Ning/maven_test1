@@ -1,5 +1,6 @@
 package com.nwq.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.nwq.entity.Menu;
 import com.nwq.service.MenuService;
@@ -25,7 +26,7 @@ import java.util.stream.Collectors;
 
 
 @WebServlet("/menu")
-public class MenuServlet extends HttpServlet {
+public class MenuServlet extends BaseServlet {
 
     private MenuService menuService = new MenuService();
 
@@ -33,6 +34,7 @@ public class MenuServlet extends HttpServlet {
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ObjectMapper om = new ObjectMapper();
         List<Menu> list = menuService.listAll();
+
         List<Menu> parent = new ArrayList<>();
         List<Menu> son = new ArrayList<>();
 
@@ -59,15 +61,6 @@ public class MenuServlet extends HttpServlet {
 
         PrintWriter pw = response.getWriter();
         pw.write(om.writeValueAsString(map));
-        pw.close();
-    }
-
-    protected void service2(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ObjectMapper om = new ObjectMapper();
-        List<Menu> list = menuService.listAll();
-        String strJson = om.writeValueAsString(list);
-        PrintWriter pw = response.getWriter();
-        pw.write(strJson);
         pw.close();
     }
 }

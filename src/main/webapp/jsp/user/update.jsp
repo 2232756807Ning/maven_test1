@@ -11,22 +11,35 @@
     <title>登录</title>
 </head>
 <script>
+    function changeHead() {
+        // 点击图片的时候让picFile产生点击的效果
+        $("#picFile").click();
+    }
+
     $(function () {
-        $("#name").blur(function () {
-            var name=$("#name").val();
+        $("#picFile").change(function () {
+            // 构造文件上传form
+            var formData = new FormData();
+            formData.append("iconFile", document.getElementById("picFile").files[0]);
+
             $.ajax({
-                type:"post",
-                url:"user/update",
-                data:{"userName": name},
-                dataType:"text",
+                url: "/img/upload",
+                processData: false,      //默认为true,对请求传递的参数(formData)不做编码处理
+                contentType: false,       //不对请求头做处理
+                type: "post",
+                data: formData,
+                dataType: "",
                 success: function (data) {
-
+                    if (data == 1) {
+                        $("#img-head").attr("src", "/img/getHead?id=" + $("#id").val() + "&nocache=" + new Date().getTime());
+                    } else {
+                        alert("上传失败");
+                    }
                 }
-            })
-        })
-
+            });
 
         });
+    });
 
 </script>
 <body>
@@ -38,6 +51,13 @@
 
         <%--隐藏域--%>
         <input type="text" name="id" value="${user.id}" style="display: none;">
+
+            <%--后台以io流的方式返回图片数据--%>
+            <img id="img-head" src="/img/getHead?id=${user.id}" onclick="changeHead()">
+            <br><br>
+
+            <!-- 真正的头像图片上传表单 -->
+            <input type="file" id="picFile" style="display: none;"><br><br>
 
         <%--修改的时候用户名不能重复    --%>
         用户名：<input type="text" name="username" value="${user.username}" id="name"/><br><br>

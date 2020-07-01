@@ -152,4 +152,17 @@ public class UserDao extends BaseDao {
         }
     }
 
+    public List<User> listForExport() {
+        String sql = "SELECT d.name deptName, u.username username," +
+                "u.real_name realName,u.age age,u.sex" +
+
+                "case when sex=1 then \"男\" " +
+                " when sex=0 then \"女\" " +
+                " else \"其他\" end sexName," +
+
+                " FROM USER u LEFT JOIN dept d ON u.dept_id = d.id ";
+
+        return template.query(sql, new BeanPropertyRowMapper<>(User.class));
+    }
+
 }

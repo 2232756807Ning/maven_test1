@@ -111,7 +111,7 @@ public class UserService {
      * @Param [name, password]
      * @Return com.nwq.entity.User
      */
-    public User checkLogin(String name, String password) {
+    public User checkLogin(String name,String password) {
         User user = new User();
         user.setUsername(name);
         user.setPassword(MdUtil.md5(password));
@@ -132,6 +132,8 @@ public class UserService {
     public void updatePic(Integer id, String pic) {
         userDao.updatePic(id, pic);
     }
+
+
 
     /**
      * @Author nwq
